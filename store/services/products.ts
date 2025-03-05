@@ -6,7 +6,7 @@ export const productsApi = createApi({
   reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({ baseUrl: "/api/" }),
   endpoints: (builder) => ({
-    getProducts: builder.query<ProductResponse, { page: number, limit: number }>({
+    getProducts: builder.query<ProductResponse, { page: number, limit: number | undefined }>({
       query: ({page = 1, limit = undefined}) => `products?page=${page}${limit ? `&limit=${limit}` : ""}`,
     }),
   }),

@@ -7,7 +7,6 @@ import {
   useAddToBasketMutation,
   useGetBasketQuery,
 } from "../store/services/basket";
-import IncrementButtons from "./IncrementButtons";
 
 interface ProductCardProps extends HTMLAttributes<HTMLDivElement> {
   product: Product;
@@ -21,15 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     updateProduct(product);
   };
 
-  const handleRemoveOneFromBasket = (productId: string) => {
-    updateProduct({ id: productId, removeAll: false });
-  };
-
   const foregroundColor: string = "#" + product.productImage.split("/").pop();
-
-  const productIsinBasket = data.find(
-    (item) => item.productId === product.productId
-  );
 
   return (
     <div className={styles.ProductCard}>

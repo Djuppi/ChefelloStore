@@ -26,7 +26,7 @@ export async function DELETE(req: Request) {
     const productRequest = await req.json();
     const url = new URL(req.url);
     const removeAll = url.searchParams.get("removeAll");
-    
+
     if (removeAll === "true") {
       const updatedState = currentState?.filter(
         (product) => product.productId !== productRequest.productId
@@ -47,7 +47,7 @@ export async function DELETE(req: Request) {
       (product) => product.productId === productRequest.productId
     );
 
-    if (indexToRemove !== -1) {
+    if (indexToRemove !== -1 && indexToRemove !== undefined) {
       currentState?.splice(indexToRemove, 1);
     }
 
