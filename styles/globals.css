@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  background-color: #f5f3e1;
+  font-family: 'Raleway', sans-serif;
+}
+
 h1 {
   @apply text-4xl;
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #f2534e;
 }
 
 p {
@@ -12,4 +24,9 @@ p {
 
 a {
   @apply text-blue-500 underline;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  color: gray;
 }

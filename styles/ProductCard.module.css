@@ -1,0 +1,100 @@
+
+
+.ProductCard {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    transition: .3s all ease-in-out;
+}
+
+.ProductCard:hover {
+    transform: perspective(700px) translateY(-5%) rotateX(15deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.554);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.554);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.554);
+}
+
+.CardContent {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    justify-content: space-evenly;
+}
+
+.AddToBasketButton {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f5f3e1;
+    color:  #f2534e;
+    padding: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+
+.ProductCard:hover .AddToBasketButton {
+    display: block;
+}
+
+.BackgroundImage {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    border-radius: 10px 10px;
+    width: 200px;
+    height: 100%;
+    transition: .3s all ease-in-out;
+}
+
+.ProductName {
+    z-index: 2;
+    position: relative;
+    color: white;
+    transition: .4s all ease-in-out;
+}
+
+.ProductCard:hover .ProductName {
+    transform: translateY(-30px);
+}
+
+.ProductImage {
+    width: 40%;
+    height: 40%;
+    justify-self: center;
+    align-self: center;
+    transition: .4s all ease-in-out;
+    opacity: 1;
+    opacity: 1;
+    bottom: 20px;
+    filter: drop-shadow(0 20px 5px rgba(0, 0, 0, 0.137));
+}
+
+.ProductCard:hover .ProductImage {
+    transform: translate3d(0%, -30%, 300px) scale(2.2);
+}
+
+@media (max-width: 768px) {
+    .ProductCard {
+        width: 150px;
+        height: 200px;
+    }   
+    .ProductImage {
+        transform: translate3d(0%, -20%, 300px) scale(2);
+    }
+
+    .ProductName {
+        font-size: 12px;
+        transform: translateY(-30px);
+    }
+
+    .AddToBasketButton {
+        display: block;
+    }
+}

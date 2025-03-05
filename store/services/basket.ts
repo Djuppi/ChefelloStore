@@ -20,12 +20,22 @@ export const basketApi = createApi({
       invalidatesTags: ["Basket"],
     }),
     addToBasket: builder.mutation<Product[], Product>({
-      query: () => "", // Implement me
+      query: (data) => ({
+        url: "basket/add",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["Basket"],
     }),
     removeFromBasket: builder.mutation<Product[], Product["productId"]>({
-      query: () => "", // Implement me
+      query: (id) => ({
+        url: `basket/remove/`,
+        method: "DELETE",
+        body: { productId: id },
+      }),
+      invalidatesTags: ["Basket"],
     }),
   }),
 });
 
-export const { usePostBasketMutation, useGetBasketQuery } = basketApi;
+export const { usePostBasketMutation, useAddToBasketMutation, useRemoveFromBasketMutation, useGetBasketQuery } = basketApi;
