@@ -5,6 +5,7 @@ export interface Product {
   originCountry: string;
   stock: number;
   supplier: string;
+  quantity: number;
 }
 
 export interface APIError {

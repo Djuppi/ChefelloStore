@@ -3,7 +3,11 @@ import React, { HTMLAttributes } from "react";
 import { Product } from "../types";
 import styles from "../styles/ProductCard.module.css";
 import Image from "next/image";
-import { useAddToBasketMutation } from "../store/services/basket";
+import {
+  useAddToBasketMutation,
+  useGetBasketQuery,
+} from "../store/services/basket";
+import IncrementButtons from "./IncrementButtons";
 
 interface ProductCardProps extends HTMLAttributes<HTMLDivElement> {
   product: Product;
@@ -11,12 +15,21 @@ interface ProductCardProps extends HTMLAttributes<HTMLDivElement> {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [updateProduct] = useAddToBasketMutation();
+  const { data = [] } = useGetBasketQuery();
 
-    const handleAddToCart = () => {
-      updateProduct(product);
-    }
-  
+  const handleAddToCart = () => {
+    updateProduct(product);
+  };
+
+  const handleRemoveOneFromBasket = (productId: string) => {
+    updateProduct({ id: productId, removeAll: false });
+  };
+
   const foregroundColor: string = "#" + product.productImage.split("/").pop();
+
+  const productIsinBasket = data.find(
+    (item) => item.productId === product.productId
+  );
 
   return (
     <div className={styles.ProductCard}>
@@ -28,7 +41,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           width={100}
           height={20}
         />
-        <p style={{ color: foregroundColor }}><small>{product.stock} in stock</small></p>
+        <p style={{ color: foregroundColor }}>
+          <small>{product.stock} in stock</small>
+        </p>
         <Image
           className={styles.BackgroundImage}
           src={`${product.productImage}.png&text=+`}
@@ -39,7 +54,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <h3 className={styles.ProductName} style={{ color: foregroundColor }}>
           {product.productName}
         </h3>
-        <button onClick={handleAddToCart} className={styles.AddToBasketButton}>Add to basket</button>
+          <button
+            onClick={handleAddToCart}
+            className={styles.AddToBasketButton}
+          >
+            Add to basket
+          </button>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export function GET(request: Request) {
         const limit = limitParam ? +limitParam : undefined;
         const productList: Product[] = products;
         if (limit) {
-            return NextResponse.json({ data: productList.slice((+pageParam*+limit), (+pageParam*+limit)+limit) }, { status: 200 });
+            return NextResponse.json({ data: productList.slice(((+pageParam-1)*+limit), ((+pageParam-1)*+limit)+limit) }, { status: 200 });
         } 
         return NextResponse.json({ data: productList }, { status: 200 });
     } catch (error) {

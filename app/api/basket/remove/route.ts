@@ -23,16 +23,42 @@ export async function DELETE(req: Request) {
   }
 
   try {
-    const productToRemove = await req.json();
-    const updatedState = currentState?.filter(
-      (product) => product.productId !== productToRemove.productId
+    const productRequest = await req.json();
+    const url = new URL(req.url);
+    const removeAll = url.searchParams.get("removeAll");
+    
+    if (removeAll === "true") {
+      const updatedState = currentState?.filter(
+        (product) => product.productId !== productRequest.productId
+      );
+      if (!updatedState) {
+        return NextResponse.json({ message: "Product not found" } as APIError, {
+          status: 404,
+        });
+      }
+      if (updatedState) {
+        database.data = updatedState;
+      }
+      await database.write();
+      return NextResponse.json(database.data, { status: 200 });
+    }
+
+    const indexToRemove = currentState?.findIndex(
+      (product) => product.productId === productRequest.productId
     );
-    if (!updatedState) {
+
+    if (indexToRemove !== -1) {
+      currentState?.splice(indexToRemove, 1);
+    }
+
+    if (indexToRemove === -1) {
       return NextResponse.json({ message: "Product not found" } as APIError, {
         status: 404,
       });
     }
-    database.data = updatedState;
+    if (currentState) {
+      database.data = currentState;
+    }
     await database.write();
 
     return NextResponse.json(database.data, { status: 200 });

@@ -27,9 +27,9 @@ export const basketApi = createApi({
       }),
       invalidatesTags: ["Basket"],
     }),
-    removeFromBasket: builder.mutation<Product[], Product["productId"]>({
-      query: (id) => ({
-        url: `basket/remove/`,
+    removeFromBasket: builder.mutation<Product[], {id: Product["productId"], removeAll: boolean}>({
+      query: ({id, removeAll = false}) => ({
+        url: `basket/remove?removeAll=${removeAll.toString()}`,
         method: "DELETE",
         body: { productId: id },
       }),

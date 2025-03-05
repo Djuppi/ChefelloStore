@@ -19,7 +19,17 @@ export async function GET() {
         return NextResponse.json({ message: "Database not available" }, { status: 502 });
     }
 
-    return NextResponse.json(database.data, { status: 200 });
+    const occurrences = database.data.reduce((acc, product) => {
+        const existingProduct = acc.find(p => p.productId === product.productId);
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            acc.push({ ...product, quantity: 1 });
+        }
+        return acc;
+    }, [] as Product[]);
+        
+    return NextResponse.json(occurrences, { status: 200 });
 }
 
 export async function POST(req: Request) {

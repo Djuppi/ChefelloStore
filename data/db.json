@@ -8,27 +8,37 @@
     "supplier": "Dietrich and Sons"
   },
   {
-    "productId": "80afdd29-3780-4847-82b2-decfbc89a033",
-    "productName": "Flower - Potmums",
-    "productImage": "http://dummyimage.com/376x564.png/cc0000/ffffff",
-    "originCountry": "American Samoa",
-    "stock": 36,
-    "supplier": "Barrows-McLaughlin"
-  },
-  {
-    "productId": "8c15bdb2-42f4-48c2-b6e7-5502d0d4e23c",
-    "productName": "Soup Campbells Mexicali Tortilla",
-    "productImage": "http://dummyimage.com/376x564.png/5fa2dd/ffffff",
-    "originCountry": "American Samoa",
-    "stock": 65,
-    "supplier": "Schiller, Kautzer and Waters"
-  },
-  {
-    "productId": "87396a30-dc75-4257-923d-e5297849fed7",
-    "productName": "Wine - Harrow Estates, Vidal",
+    "productId": "a398644d-e045-4a37-9d08-696569a99838",
+    "productName": "Wine - Gewurztraminer Pierre",
     "productImage": "http://dummyimage.com/376x564.png/dddddd/000000",
     "originCountry": "American Samoa",
-    "stock": 17,
-    "supplier": "Labadie-Schimmel"
+    "stock": 68,
+    "supplier": "Dietrich and Sons"
+  },
+  {
+    "productId": "7c127e3f-56e7-47a9-b03d-852e2f4b1849",
+    "productName": "Veal - Slab Bacon",
+    "productImage": "http://dummyimage.com/376x564.png/ff4444/ffffff",
+    "originCountry": "American Samoa",
+    "stock": 68,
+    "supplier": "Runolfsson LLC"
+  },
+  {
+    "productId": "7c127e3f-56e7-47a9-b03d-852e2f4b1849",
+    "productName": "Veal - Slab Bacon",
+    "productImage": "http://dummyimage.com/376x564.png/ff4444/ffffff",
+    "originCountry": "American Samoa",
+    "stock": 68,
+    "supplier": "Runolfsson LLC",
+    "quantity": 1
+  },
+  {
+    "productId": "7c127e3f-56e7-47a9-b03d-852e2f4b1849",
+    "productName": "Veal - Slab Bacon",
+    "productImage": "http://dummyimage.com/376x564.png/ff4444/ffffff",
+    "originCountry": "American Samoa",
+    "stock": 68,
+    "supplier": "Runolfsson LLC",
+    "quantity": 2
   }
 ]
