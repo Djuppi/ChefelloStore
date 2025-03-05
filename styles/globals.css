@@ -23,7 +23,8 @@ p {
 }
 
 a {
-  @apply text-blue-500 underline;
+  @apply underline;
+  color: #f2534e;
 }
 
 button:disabled {

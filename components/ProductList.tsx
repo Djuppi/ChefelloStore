@@ -23,7 +23,7 @@ const ProductList: React.FC<HTMLAttributes<HTMLUListElement>> = (props) => {
 
   const nOfPages = useMemo(() => {
     
-    return Math.ceil(allProducts?.data?.length / PRODUCTS_PER_PAGE);
+    return Math.ceil(allProducts?.data?.length / PRODUCTS_PER_PAGE)+1;
   }, [allProducts]);
 
   return (
