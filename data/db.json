@@ -1,44 +1,10 @@
 [
   {
-    "productId": "a398644d-e045-4a37-9d08-696569a99838",
-    "productName": "Wine - Gewurztraminer Pierre",
-    "productImage": "http://dummyimage.com/376x564.png/dddddd/000000",
-    "originCountry": "American Samoa",
-    "stock": 68,
-    "supplier": "Dietrich and Sons"
-  },
-  {
-    "productId": "a398644d-e045-4a37-9d08-696569a99838",
-    "productName": "Wine - Gewurztraminer Pierre",
-    "productImage": "http://dummyimage.com/376x564.png/dddddd/000000",
-    "originCountry": "American Samoa",
-    "stock": 68,
-    "supplier": "Dietrich and Sons"
-  },
-  {
-    "productId": "7c127e3f-56e7-47a9-b03d-852e2f4b1849",
-    "productName": "Veal - Slab Bacon",
+    "productId": "2ae38126-3b7b-4898-bdaa-ac3a89d490d7",
+    "productName": "Mushroom - Trumpet, Dry",
     "productImage": "http://dummyimage.com/376x564.png/ff4444/ffffff",
     "originCountry": "American Samoa",
-    "stock": 68,
-    "supplier": "Runolfsson LLC"
-  },
-  {
-    "productId": "7c127e3f-56e7-47a9-b03d-852e2f4b1849",
-    "productName": "Veal - Slab Bacon",
-    "productImage": "http://dummyimage.com/376x564.png/ff4444/ffffff",
-    "originCountry": "American Samoa",
-    "stock": 68,
-    "supplier": "Runolfsson LLC",
-    "quantity": 1
-  },
-  {
-    "productId": "7c127e3f-56e7-47a9-b03d-852e2f4b1849",
-    "productName": "Veal - Slab Bacon",
-    "productImage": "http://dummyimage.com/376x564.png/ff4444/ffffff",
-    "originCountry": "American Samoa",
-    "stock": 68,
-    "supplier": "Runolfsson LLC",
-    "quantity": 2
+    "stock": 19,
+    "supplier": "Grant and Sons"
   }
 ]

@@ -84,8 +84,15 @@
     .ProductCard {
         width: 150px;
         height: 200px;
-    }   
+    }
+    .ProductCard:hover {
+        transform: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
     .ProductImage {
+        transform: translate3d(0%, -20%, 300px) scale(2);
+    }
+    .ProductCard:hover .ProductImage {
         transform: translate3d(0%, -20%, 300px) scale(2);
     }
 
